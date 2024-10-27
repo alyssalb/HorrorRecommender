@@ -79,7 +79,7 @@
 <body>
     <h1>Rate Horror Movies</h1>
     <div id="progress-bar">
-        <div id="progress">0/10 Movies Rated</div>
+        <div id="progress">0/5 Movies Rated</div>
     </div>
     <div id="movies-container"></div>
     <button id="submit-btn" onclick="displayTopGenres()">Submit Ratings</button>
@@ -97,7 +97,7 @@
             try {
                 const response = await fetch('horror_movies.json');
                 allMovies = await response.json();
-                rateMoreMovies();
+                displayInitialMovies(allMovies);
             } catch (error) {
                 console.error('Error fetching the JSON file:', error);
             }
@@ -109,10 +109,10 @@
             return shuffled.slice(0, count);
         }
 
-        function displayMovies(movies) {
+        function displayMovies(movies, count = 10) {
             const moviesContainer = document.getElementById('movies-container');
             moviesContainer.innerHTML = '';
-            const randomMovies = getRandomMovies(movies, 10);
+            const randomMovies = getRandomMovies(movies, count);
 
             randomMovies.forEach((movie, index) => {
                 ratedMovies.push(movie.title);
@@ -154,8 +154,8 @@
 
         function updateProgressBar() {
             const progress = document.getElementById('progress');
-            progress.style.width = (moviesRatedCount / 10) * 100 + '%';
-            progress.textContent = `${moviesRatedCount}/10 Movies Rated`;
+            progress.style.width = (moviesRatedCount / 5) * 100 + '%';
+            progress.textContent = `${moviesRatedCount}/5 Movies Rated`;
         }
 
         function displayTopGenres() {
@@ -207,8 +207,11 @@
             displayMovies(allMovies);
         }
 
+        function displayInitialMovies(movies) {
+            displayMovies(movies, 5);
+        }
+
         fetchMovies();
     </script>
 </body>
 </html>
-
