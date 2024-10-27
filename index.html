@@ -91,12 +91,13 @@
         let genrePreferences = {};
         let ratedMovies = [];
         let moviesRatedCount = 0;
+        let allMovies = [];
 
         async function fetchMovies() {
             try {
                 const response = await fetch('horror_movies.json');
-                const movies = await response.json();
-                displayMovies(movies);
+                allMovies = await response.json();
+                displayMovies(allMovies);
             } catch (error) {
                 console.error('Error fetching the JSON file:', error);
             }
@@ -181,12 +182,9 @@
 
         async function recommendMovies(topGenres) {
             try {
-                const response = await fetch('horror_movies.json');
-                const movies = await response.json();
-
                 const recommendations = [];
                 topGenres.forEach(genre => {
-                    const genreMovies = movies.filter(movie => movie.genre === genre && !ratedMovies.includes(movie.title));
+                    const genreMovies = allMovies.filter(movie => movie.genre === genre && !ratedMovies.includes(movie.title));
                     if (genreMovies.length > 0) {
                         recommendations.push(genreMovies[Math.floor(Math.random() * genreMovies.length)]);
                     }
@@ -206,7 +204,7 @@
         function rateMoreMovies() {
             moviesRatedCount = 0;
             updateProgressBar();
-            fetchMovies();
+            displayMovies(allMovies);
         }
 
         fetchMovies();
