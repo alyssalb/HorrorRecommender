@@ -1,1 +1,328 @@
+[
+  {
+    "title": "The Exorcist",
+    "author": "William Friedkin",
+    "year": 1973,
+    "genre": "Paranormal/Supernatural"
+  },
+  {
+    "title": "Hereditary",
+    "author": "Ari Aster",
+    "year": 2018,
+    "genre": "Psychological Horror"
+  },
+  {
+    "title": "The Thing",
+    "author": "John Carpenter",
+    "year": 1982,
+    "genre": "Body Horror"
+  },
+  {
+    "title": "Possession",
+    "author": "Andrzej Żuławski",
+    "year": 1981,
+    "genre": "Psychological Horror"
+  },
+  {
+    "title": "Noroi: The Curse",
+    "author": "Kôji Shiraishi",
+    "year": 2005,
+    "genre": "Found Footage"
+  },
+  {
+    "title": "The Conjuring",
+    "author": "James Wan",
+    "year": 2013,
+    "genre": "Paranormal/Supernatural"
+  },
+  {
+    "title": "A Nightmare on Elm Street",
+    "author": "Wes Craven",
+    "year": 1984,
+    "genre": "Slasher"
+  },
+  {
+    "title": "Lake Mungo",
+    "author": "Joel Anderson",
+    "year": 2008,
+    "genre": "Paranormal/Supernatural"
+  },
+  {
+    "title": "Society",
+    "author": "Brian Yuzna",
+    "year": 1989,
+    "genre": "Body Horror"
+  },
+  {
+    "title": "The Babadook",
+    "author": "Jennifer Kent",
+    "year": 2014,
+    "genre": "Psychological Horror"
+  },
+  {
+    "title": "Halloween",
+    "author": "John Carpenter",
+    "year": 1978,
+    "genre": "Slasher"
+  },
+  {
+    "title": "The Witch",
+    "author": "Robert Eggers",
+    "year": 2015,
+    "genre": "Folk Horror"
+  },
+  {
+    "title": "House",
+    "author": "Nobuhiko Ôbayashi",
+    "year": 1977,
+    "genre": "Horror Comedy"
+  },
+  {
+    "title": "The Texas Chain Saw Massacre",
+    "author": "Tobe Hooper",
+    "year": 1974,
+    "genre": "Slasher"
+  },
+  {
+    "title": "The Burning",
+    "author": "Tony Maylam",
+    "year": 1981,
+    "genre": "Slasher"
+  },
+  {
+    "title": "StageFright",
+    "author": "Michele Soavi",
+    "year": 1987,
+    "genre": "Slasher"
+  },
+  {
+    "title": "The Ring",
+    "author": "Gore Verbinski",
+    "year": 2002,
+    "genre": "Paranormal/Supernatural"
+  },
+  {
+    "title": "The Addiction",
+    "author": "Abel Ferrara",
+    "year": 1995,
+    "genre": "Vampire"
+  },
+  {
+    "title": "The Mothman Prophecies",
+    "author": "Mark Pellington",
+    "year": 2002,
+    "genre": "Paranormal/Supernatural"
+  },
+  {
+    "title": "The Cabin in the Woods",
+    "author": "Drew Goddard",
+    "year": 2012,
+    "genre": "Horror Comedy"
+  },
+  {
+    "title": "Pin",
+    "author": "Sandor Stern",
+    "year": 1988,
+    "genre": "Psychological Horror"
+  },
+  {
+    "title": "The Descent",
+    "author": "Neil Marshall",
+    "year": 2005,
+    "genre": "Psychological Horror"
+  },
+  {
+    "title": "Angst",
+    "author": "Gerald Kargl",
+    "year": 1983,
+    "genre": "Psychological Horror"
+  },
+  {
+    "title": "Let's Scare Jessica to Death",
+    "author": "John Hancock",
+    "year": 1971,
+    "genre": "Psychological Horror"
+  },
+  {
+    "title": "The Devil's Backbone",
+    "author": "Guillermo del Toro",
+    "year": 2001,
+    "genre": "Paranormal/Supernatural"
+  },
+  {
+    "title": "Midsommar",
+    "author": "Ari Aster",
+    "year": 2019,
+    "genre": "Folk Horror"
+  },
+  {
+    "title": "It Follows",
+    "author": "David Robert Mitchell",
+    "year": 2014,
+    "genre": "Paranormal/Supernatural"
+  },
+  {
+    "title": "In My Skin",
+    "author": "Marina de Van",
+    "year": 2002,
+    "genre": "Body Horror"
+  },
+  {
+    "title": "The Resurrected",
+    "author": "Dan O'Bannon",
+    "year": 1991,
+    "genre": "Folk Horror"
+  },
+  {
+    "title": "The Reflecting Skin",
+    "author": "Philip Ridley",
+    "year": 1990,
+    "genre": "Psychological Horror"
+  },
+  {
+    "title": "Maniac",
+    "author": "William Lustig",
+    "year": 1980,
+    "genre": "Slasher"
+  },
+  {
+    "title": "Alice, Sweet Alice",
+    "author": "Alfred Sole",
+    "year": 1976,
+    "genre": "Slasher"
+  },
+  {
+    "title": "The Sixth Sense",
+    "author": "M. Night Shyamalan",
+    "year": 1999,
+    "genre": "Paranormal/Supernatural"
+  },
+  {
+    "title": "The Ninth Configuration",
+    "author": "William Peter Blatty",
+    "year": 1980,
+    "genre": "Psychological Horror"
+  },
+  {
+    "title": "The Tenant",
+    "author": "Roman Polanski",
+    "year": 1976,
+    "genre": "Psychological Horror"
+  },
+  {
+    "title": "Deathdream",
+    "author": "Bob Clark",
+    "year": 1974,
+    "genre": "Paranormal/Supernatural"
+  },
+  {
+    "title": "Deep Red",
+    "author": "Dario Argento",
+    "year": 1975,
+    "genre": "Slasher"
+  },
+  {
+    "title": "The Grudge",
+    "author": "Takashi Shimizu",
+    "year": 2004,
+    "genre": "Paranormal/Supernatural"
+  },
+  {
+    "title": "Rituals",
+    "author": "Peter Carter",
+    "year": 1977,
+    "genre": "Folk Horror"
+  },
+  {
+    "title": "Next of Kin",
+    "author": "Tony Williams",
+    "year": 1982,
+    "genre": "Paranormal/Supernatural"
+  },
+  {
+    "title": "The House with Laughing Windows",
+    "author": "Pupi Avati",
+    "year": 1976,
+    "genre": "Folk Horror"
+  },
+  {
+    "title": "Dead & Buried",
+    "author": "Gary Sherman",
+    "year": 1981,
+    "genre": "Gore"
+  },
+  {
+    "title": "Brain Damage",
+    "author": "Frank Henenlotter",
+    "year": 1988,
+    "genre": "Horror Comedy"
+  },
+  {
+    "title": "Burnt Offerings",
+    "author": "Dan Curtis",
+    "year": 1976,
+    "genre": "Paranormal/Supernatural"
+  },
+  {
+    "title": "The Others",
+    "author": "Alejandro Amenábar",
+    "year": 2001,
+    "genre": "Paranormal/Supernatural"
+  },
+  {
+    "title": "Tombs of the Blind Dead",
+    "author": "Amando de Ossorio",
+    "year": 1972,
+    "genre": "Paranormal/Supernatural"
+  },
+  {
+    "title": "Sleepaway Camp",
+    "author": "Robert Hiltzik",
+    "year": 1983,
+    "genre": "Slasher"
+  },
+  {
+    "title": "Night of the Creeps",
+    "author": "Fred Dekker",
+    "year": 1986,
+    "genre": "Horror Comedy"
+  },
+  {
+    "title": "The Stuff",
+    "author": "Larry Cohen",
+    "year": 1985,
+    "genre": "Horror Comedy"
+  },
+  {
+    "title": "Body Melt",
+    "author": "Philip Brophy",
+    "year": 1993,
+    "genre": "Body Horror"
+  },
+  {
+    "title": "Kuroneko",
+    "author": "Kaneto Shindô",
+    "year": 1968,
+    "genre": "Folk Horror"
+  },
+  {
+    "title": "Alucarda",
+    "author": "Juan López Moctezuma",
+    "year": 1977,
+    "genre": "Paranormal/Supernatural"
+  },
+  {
+    "title": "Messiah of Evil",
+    "author": "Willard Huyck",
+    "year": 1973,
+    "genre": "Paranormal/Supernatural"
+  },
+  {
+    "title": "The Poughkeepsie Tapes",
+    "author": "John Erick Dowdle",
+    "year": 2007,
+    "genre": "Found Footage"
+  },
+  {
+    "title": "
 
