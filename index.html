@@ -226,6 +226,7 @@
 
         function rateMoreMovies() {
             displayMovies();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         document.addEventListener('DOMContentLoaded', displayMovies);
