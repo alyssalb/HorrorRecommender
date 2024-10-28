@@ -127,6 +127,7 @@
                     radio.name = movie.title;
                     radio.value = i;
                     radio.dataset.genre = movie.genre;
+                    radio.addEventListener('change', handleRating);
                     label.appendChild(radio);
                     label.appendChild(document.createTextNode(` ${i} `));
                     ratingOptions.appendChild(label);
@@ -138,6 +139,7 @@
                 notWatchedRadio.name = movie.title;
                 notWatchedRadio.value = 'not watched';
                 notWatchedRadio.dataset.genre = movie.genre;
+                notWatchedRadio.addEventListener('change', handleRating);
                 notWatchedLabel.appendChild(notWatchedRadio);
                 notWatchedLabel.appendChild(document.createTextNode(' Not Watched Yet'));
                 ratingOptions.appendChild(notWatchedLabel);
@@ -154,9 +156,11 @@
         function handleRating(event) {
             const genre = event.target.dataset.genre;
             const movieTitle = event.target.name;
-            const rating = parseInt(event.target.value);
+            const rating = event.target.value;
 
-            ratedMovies.add(movieTitle);
+            if (rating !== 'not watched') {
+                ratedMovies.add(movieTitle);
+            }
 
             if (rating >= 3) {
                 if (genrePreferences[genre]) {
@@ -168,8 +172,6 @@
         }
 
         function submitRatings() {
-            const ratings = document.querySelectorAll('input[type="radio"]:checked');
-            ratings.forEach(rating => handleRating({ target: rating }));
             updateGenrePreferencesDisplay();
             displayTopGenres();
             recommendMovies();
@@ -225,8 +227,7 @@
         }
 
         function rateMoreMovies() {
-            const horrorMovies = fetchHorrorMovies();
-            horrorMovies.then(() => displayMovies());
+            displayMovies();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
