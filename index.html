@@ -43,6 +43,7 @@
     <div id="movie-list"></div>
     <button class="submit-button" onclick="submitRatings()">Submit Ratings</button>
     <div id="genre-preferences"></div>
+    <div id="movie-recommendations"></div>
 
     <script>
         async function fetchHorrorMovies() {
@@ -127,6 +128,7 @@
             ratings.forEach(rating => handleRating({ target: rating }));
             updateGenrePreferencesDisplay();
             displayTopGenres();
+            recommendMovies();
         }
 
         function updateGenrePreferencesDisplay() {
@@ -154,7 +156,32 @@
             });
         }
 
+        async function recommendMovies() {
+            const horrorMovies = await fetchHorrorMovies();
+            const sortedGenres = Object.entries(genrePreferences).sort((a, b) => b[1] - a[1]);
+            const topGenres = sortedGenres.slice(0, 3);
+
+            const recommendedMovies = [];
+
+            topGenres.forEach(([genre]) => {
+                const genreMovies = horrorMovies.filter(movie => movie.genre === genre && !recommendedMovies.includes(movie));
+                if (genreMovies.length > 0) {
+                    recommendedMovies.push(genreMovies[Math.floor(Math.random() * genreMovies.length)]);
+                }
+            });
+
+            const movieRecommendationsDiv = document.getElementById('movie-recommendations');
+            movieRecommendationsDiv.innerHTML = '<h2>Movie Recommendations</h2>';
+
+            recommendedMovies.forEach(movie => {
+                const movieDiv = document.createElement('div');
+                movieDiv.textContent = `${movie.title} (${movie.year}) - Directed by ${movie.director}`;
+                movieRecommendationsDiv.appendChild(movieDiv);
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', displayMovies);
     </script>
 </body>
 </html>
+
