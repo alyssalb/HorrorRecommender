@@ -24,11 +24,24 @@
         .rating-options {
             margin-top: 0.5em;
         }
+        .submit-button {
+            margin-top: 2em;
+            padding: 1em;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #777;
+        }
     </style>
 </head>
 <body>
     <h1>Rate Random Horror Movies</h1>
     <div id="movie-list"></div>
+    <button class="submit-button" onclick="submitRatings()">Submit Ratings</button>
     <div id="genre-preferences"></div>
 
     <script>
@@ -73,7 +86,6 @@
                     radio.name = movie.title;
                     radio.value = i;
                     radio.dataset.genre = movie.genre;
-                    radio.addEventListener('change', handleRating);
                     label.appendChild(radio);
                     label.appendChild(document.createTextNode(` ${i} `));
                     ratingOptions.appendChild(label);
@@ -85,7 +97,6 @@
                 notWatchedRadio.name = movie.title;
                 notWatchedRadio.value = 'not watched';
                 notWatchedRadio.dataset.genre = movie.genre;
-                notWatchedRadio.addEventListener('change', handleRating);
                 notWatchedLabel.appendChild(notWatchedRadio);
                 notWatchedLabel.appendChild(document.createTextNode(' Not Watched Yet'));
                 ratingOptions.appendChild(notWatchedLabel);
@@ -109,7 +120,13 @@
                     genrePreferences[genre] = 1;
                 }
             }
+        }
+
+        function submitRatings() {
+            const ratings = document.querySelectorAll('input[type="radio"]:checked');
+            ratings.forEach(rating => handleRating({ target: rating }));
             updateGenrePreferencesDisplay();
+            displayTopGenres();
         }
 
         function updateGenrePreferencesDisplay() {
@@ -121,6 +138,20 @@
                 genreDiv.textContent = `${genre}: ${count}`;
                 genrePreferencesDiv.appendChild(genreDiv);
             }
+        }
+
+        function displayTopGenres() {
+            const sortedGenres = Object.entries(genrePreferences).sort((a, b) => b[1] - a[1]);
+            const topGenres = sortedGenres.slice(0, 3);
+
+            const genrePreferencesDiv = document.getElementById('genre-preferences');
+            genrePreferencesDiv.innerHTML += '<h2>Top 3 Genres</h2>';
+
+            topGenres.forEach(([genre, count]) => {
+                const genreDiv = document.createElement('div');
+                genreDiv.textContent = `${genre}: ${count}`;
+                genrePreferencesDiv.appendChild(genreDiv);
+            });
         }
 
         document.addEventListener('DOMContentLoaded', displayMovies);
