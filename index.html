@@ -210,7 +210,7 @@
             const recommendedMovies = [];
 
             topGenres.forEach(([genre]) => {
-                const genreMovies = horrorMovies.filter(movie => movie.genre === genre && !ratedMovies.has(movie.title));
+                const genreMovies = horrorMovies.filter(movie => movie.genre === genre && !ratedMovies.has(movie.title) && !ratedMovies.has(movie.title));
                 if (genreMovies.length > 0) {
                     recommendedMovies.push(genreMovies[Math.floor(Math.random() * genreMovies.length)]);
                 }
