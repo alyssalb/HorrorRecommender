@@ -225,13 +225,13 @@
         }
 
         function rateMoreMovies() {
-            displayMovies();
+            const horrorMovies = fetchHorrorMovies();
+            horrorMovies.then(() => displayMovies());
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
-        document.querySelector('.submit-button[onclick="rateMoreMovies()"').addEventListener('click', rateMoreMovies);
 
         document.addEventListener('DOMContentLoaded', displayMovies);
     </script>
 </body>
 </html>
+
