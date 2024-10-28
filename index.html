@@ -29,6 +29,7 @@
 <body>
     <h1>Rate Random Horror Movies</h1>
     <div id="movie-list"></div>
+    <div id="genre-preferences"></div>
 
     <script>
         async function fetchHorrorMovies() {
@@ -71,6 +72,8 @@
                     radio.type = 'radio';
                     radio.name = movie.title;
                     radio.value = i;
+                    radio.dataset.genre = movie.genre;
+                    radio.addEventListener('change', handleRating);
                     label.appendChild(radio);
                     label.appendChild(document.createTextNode(` ${i} `));
                     ratingOptions.appendChild(label);
@@ -81,6 +84,8 @@
                 notWatchedRadio.type = 'radio';
                 notWatchedRadio.name = movie.title;
                 notWatchedRadio.value = 'not watched';
+                notWatchedRadio.dataset.genre = movie.genre;
+                notWatchedRadio.addEventListener('change', handleRating);
                 notWatchedLabel.appendChild(notWatchedRadio);
                 notWatchedLabel.appendChild(document.createTextNode(' Not Watched Yet'));
                 ratingOptions.appendChild(notWatchedLabel);
@@ -91,8 +96,36 @@
             });
         }
 
+        const genrePreferences = {};
+
+        function handleRating(event) {
+            const genre = event.target.dataset.genre;
+            const rating = parseInt(event.target.value);
+
+            if (rating >= 3) {
+                if (genrePreferences[genre]) {
+                    genrePreferences[genre]++;
+                } else {
+                    genrePreferences[genre] = 1;
+                }
+            }
+            updateGenrePreferencesDisplay();
+        }
+
+        function updateGenrePreferencesDisplay() {
+            const genrePreferencesDiv = document.getElementById('genre-preferences');
+            genrePreferencesDiv.innerHTML = '<h2>Genre Preferences</h2>';
+
+            for (const [genre, count] of Object.entries(genrePreferences)) {
+                const genreDiv = document.createElement('div');
+                genreDiv.textContent = `${genre}: ${count}`;
+                genrePreferencesDiv.appendChild(genreDiv);
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', displayMovies);
     </script>
 </body>
 </html>
+
 
