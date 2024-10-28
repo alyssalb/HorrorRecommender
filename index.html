@@ -44,6 +44,7 @@
     <button class="submit-button" onclick="submitRatings()">Submit Ratings</button>
     <div id="genre-preferences"></div>
     <div id="movie-recommendations"></div>
+    <button class="submit-button" onclick="rateMoreMovies()">Rate More Movies</button>
 
     <script>
         async function fetchHorrorMovies() {
@@ -66,8 +67,10 @@
 
         async function displayMovies() {
             const movieListDiv = document.getElementById('movie-list');
+            movieListDiv.innerHTML = ''; // Clear previous movies
             const horrorMovies = await fetchHorrorMovies();
-            const randomMovies = getRandomMovies(horrorMovies, 10);
+            const availableMovies = horrorMovies.filter(movie => !ratedMovies.has(movie.title));
+            const randomMovies = getRandomMovies(availableMovies, 10);
 
             randomMovies.forEach(movie => {
                 const movieDiv = document.createElement('div');
@@ -182,6 +185,10 @@
                 movieDiv.textContent = `${movie.title} (${movie.year}) - Directed by ${movie.director}`;
                 movieRecommendationsDiv.appendChild(movieDiv);
             });
+        }
+
+        function rateMoreMovies() {
+            displayMovies();
         }
 
         document.addEventListener('DOMContentLoaded', displayMovies);
