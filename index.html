@@ -126,12 +126,12 @@
                     <p><strong>Genre:</strong> ${movie.genre}</p>
                     <div class="rating">
                         <label>Rate this movie:</label>
-                        <label><input type="radio" name="rating-${index}" value="1" onclick="handleRating('${movie.genre}', 1)"> 1</label>
-                        <label><input type="radio" name="rating-${index}" value="2" onclick="handleRating('${movie.genre}', 2)"> 2</label>
-                        <label><input type="radio" name="rating-${index}" value="3" onclick="handleRating('${movie.genre}', 3)"> 3</label>
-                        <label><input type="radio" name="rating-${index}" value="4" onclick="handleRating('${movie.genre}', 4)"> 4</label>
-                        <label><input type="radio" name="rating-${index}" value="5" onclick="handleRating('${movie.genre}', 5)"> 5</label>
-                        <label><input type="radio" name="rating-${index}" value="haven't read" onclick="handleRating('${movie.genre}', 'haven\'t read')"> Haven't read it</label>
+                        <label><input type="radio" name="rating-${movie.title}" value="1" onclick="handleRating('${movie.genre}', 1)"> 1</label>
+                        <label><input type="radio" name="rating-${movie.title}" value="2" onclick="handleRating('${movie.genre}', 2)"> 2</label>
+                        <label><input type="radio" name="rating-${movie.title}" value="3" onclick="handleRating('${movie.genre}', 3)"> 3</label>
+                        <label><input type="radio" name="rating-${movie.title}" value="4" onclick="handleRating('${movie.genre}', 4)"> 4</label>
+                        <label><input type="radio" name="rating-${movie.title}" value="5" onclick="handleRating('${movie.genre}', 5)"> 5</label>
+                        <label><input type="radio" name="rating-${movie.title}" value="haven't read" onclick="handleRating('${movie.genre}', 'haven\'t read')"> Haven't read it</label>
                     </div>
                 `;
 
