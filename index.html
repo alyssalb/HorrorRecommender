@@ -226,14 +226,12 @@
 
         function rateMoreMovies() {
             displayMovies();
-            setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
-        });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        document.querySelector('.submit-button[onclick="rateMoreMovies()"]')?.addEventListener('click', rateMoreMovies);
+        document.querySelector('.submit-button[onclick="rateMoreMovies()"').addEventListener('click', rateMoreMovies);
 
         document.addEventListener('DOMContentLoaded', displayMovies);
     </script>
 </body>
 </html>
-
