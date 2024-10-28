@@ -109,10 +109,14 @@
         }
 
         const genrePreferences = {};
+        const ratedMovies = new Set();
 
         function handleRating(event) {
             const genre = event.target.dataset.genre;
+            const movieTitle = event.target.name;
             const rating = parseInt(event.target.value);
+
+            ratedMovies.add(movieTitle);
 
             if (rating >= 3) {
                 if (genrePreferences[genre]) {
@@ -164,7 +168,7 @@
             const recommendedMovies = [];
 
             topGenres.forEach(([genre]) => {
-                const genreMovies = horrorMovies.filter(movie => movie.genre === genre && !recommendedMovies.includes(movie));
+                const genreMovies = horrorMovies.filter(movie => movie.genre === genre && !ratedMovies.has(movie.title));
                 if (genreMovies.length > 0) {
                     recommendedMovies.push(genreMovies[Math.floor(Math.random() * genreMovies.length)]);
                 }
@@ -184,3 +188,4 @@
     </script>
 </body>
 </html>
+
